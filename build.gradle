@@ -19,4 +19,4 @@ sourceSets {
 task compile {
 
     doLast {println 'Hello world!'    }}
-t 
+
