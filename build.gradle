@@ -4,3 +4,19 @@
  * This is a general purpose Gradle build.
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds
  */
+
+plugins {
+    id 'java-library'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = ['src/']}
+        resources {
+            srcDirs = ['src/resources']}}}
+
+task compile {
+
+    doLast {println 'Hello world!'    }}
+t 
