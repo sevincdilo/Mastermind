@@ -1,25 +1,25 @@
-package main.java;
+package de.mobilcom.mastermind.model;
 
 import java.util.ArrayList;
 
 public class Guess {
 
-    private int[] versuche;
+    private int[] attempts;
     private int rightPositionAndColorCount;
     private int rightColorCount;
 
     public Guess(int[] versuche, int rightPositionAndColorCount, int rightColorCount) {
-        this.versuche = versuche;
+        this.attempts = versuche;
         this.rightPositionAndColorCount = rightPositionAndColorCount;
         this.rightColorCount = rightColorCount;
     }
 
     public int[] getVersuche() {
-        return versuche;
+        return attempts;
     }
 
     public void setVersuche(int[] versuche) {
-        this.versuche = versuche;
+        this.attempts = versuche;
     }
 
     public int getRightPositionAndColorCount() {

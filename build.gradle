@@ -9,12 +9,7 @@ plugins {
     id 'java-library'
 }
 
-sourceSets {
-    main {
-        java {
-            srcDirs = ['src/']}
-        resources {
-            srcDirs = ['src/resources']}}}
+
 
 task compile {
 

@@ -1,6 +1,6 @@
-package main.java;
 
-import main.java.service.MastermindService;
+
+import de.mobilcom.mastermind.service.MastermindService;
 
 public class Mastermind {
     public static void main(String[] args) {

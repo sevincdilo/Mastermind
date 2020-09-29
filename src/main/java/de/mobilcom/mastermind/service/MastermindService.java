@@ -1,6 +1,6 @@
-package main.java.service;
-import main.java.Code;
-import main.java.model.GameState;
+package de.mobilcom.mastermind.service;
+
+import de.mobilcom.mastermind.model.GameState;
 
 public class MastermindService {
 
@@ -11,7 +11,7 @@ public class MastermindService {
 
     }
 
-    public GameState guess(GameState current, Code newGuess){
+    public GameState guess(GameState current, int[] newGuess){
        return current;
     }
 }

@@ -1,12 +1,14 @@
-package main.java.model;
+package de.mobilcom.mastermind.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
-public class GameState {
+public class GameState {  // guesses um einzelne versuche zu speichern
 
-    private List<Integer> computerCombination = this.generateCombination();
+    private List<Integer> allColors= this.generateCombination();
+    private List<Integer> computerCombination = this.xCombination_RandomElements();
     private int colors;
     private int fields;
     private int trycount;
@@ -54,9 +56,22 @@ public class GameState {
         xCombination.add(6);
         xCombination.add(7);
         xCombination.add(8);
-        Collections.shuffle(xCombination);
-        System.out.println(xCombination.subList(0,4));
-        return xCombination.subList(0,4);
+
+        return xCombination;
+
+    }
+
+    public List<Integer> xCombination_RandomElements() {
+        List<Integer> selectedNumbers = new ArrayList<Integer>();
+        Random rand = new Random();
+        int numberOfElements = 4;
+
+        for(int i=0; i< numberOfElements; i++){
+            int randomIndex = rand.nextInt(this.allColors.size());
+            Integer randomElement = this.allColors.get(randomIndex);
+            selectedNumbers.add(randomElement);
+        }
+        return selectedNumbers;
     }
 
 }
