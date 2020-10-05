@@ -4,22 +4,23 @@ import java.util.ArrayList;
 
 public class Guess {
 
-    private int[] attempts;
+    private int[] playerCombination;
     private int rightPositionAndColorCount;
     private int rightColorCount;
+    private int[] attemps;
 
-    public Guess(int[] versuche, int rightPositionAndColorCount, int rightColorCount) {
-        this.attempts = versuche;
+    public Guess(int[] playMove, int rightPositionAndColorCount, int rightColorCount) {
+        this.playerCombination = playMove; // spieler combination
         this.rightPositionAndColorCount = rightPositionAndColorCount;
         this.rightColorCount = rightColorCount;
     }
 
-    public int[] getVersuche() {
-        return attempts;
+    public int[] getPlayMove() {
+        return playerCombination;
     }
 
-    public void setVersuche(int[] versuche) {
-        this.attempts = versuche;
+    public void setPlayMove(int[] playMove) {
+        this.playerCombination = playMove;
     }
 
     public int getRightPositionAndColorCount() {
@@ -37,6 +38,11 @@ public class Guess {
     public void setRightColorCount(int rightColorCount) {
         this.rightColorCount = rightColorCount;
     }
+
+    public int[] getAttemps() {
+        return attemps;
+    }
+
 
 }
 

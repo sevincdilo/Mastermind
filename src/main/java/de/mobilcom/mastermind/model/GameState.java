@@ -1,23 +1,22 @@
 package de.mobilcom.mastermind.model;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class GameState {  // guesses um einzelne versuche zu speichern
 
-    private List<Integer> allColors= this.generateCombination();
-    private List<Integer> computerCombination = this.xCombination_RandomElements();
+    private int[] computerCombination;
     private int colors;
     private int fields;
     private int trycount;
+    private Guess[] attemps;
 
 
     public GameState(int colors, int fields, int trycount) {
         this.colors = colors;
         this.fields = fields;
         this.trycount = trycount;
+       // this.computerCombination =this.generateComputerCombination();
+      //  this.attemps = ;
 
     }
 
@@ -46,34 +45,39 @@ public class GameState {  // guesses um einzelne versuche zu speichern
     }
 
 
-    private List<Integer> generateCombination() {
-        ArrayList<Integer> xCombination = new ArrayList<Integer>();
-        xCombination.add(1);
-        xCombination.add(2);
-        xCombination.add(3);
-        xCombination.add(4);
-        xCombination.add(5);
-        xCombination.add(6);
-        xCombination.add(7);
-        xCombination.add(8);
+    /**
+     * Creates a random combination of size {@link #fields} where
+     * each item is one of 1, ..., {@link #colors}.
+     *
+     * @return
+     */
+//    public int[] generateComputerCombination() {
+//        List<Integer> selectedNumbers = new ArrayList<Integer>();
+//        Random combination = new Random();
+//        int colors;
+//
+//        for(int i=0; i< colors; i++){
+//            int randomIndex = combination.nextInt(selectedNumbers());
+//            Integer randomElement = selectedNumbers.get(randomIndex);
+//            selectedNumbers.add(randomElement);
+//        }
+//        System.out.println(selectedNumbers);
+//        return selectedNumbers;
+//
+//    }
 
-        return xCombination;
-
+    public int generateComputerCombination() {
+        Integer[] computerCombination = {1, 2, 3, 4, 5, 6, 7, 8};
+        List<Integer> list = Arrays.asList(computerCombination);
+        Collections.shuffle(list);
+        list.toArray(computerCombination);
+        return computerCombination[0-3];
     }
 
-    public List<Integer> xCombination_RandomElements() {
-        List<Integer> selectedNumbers = new ArrayList<Integer>();
-        Random rand = new Random();
-        int numberOfElements = 4;
 
-        for(int i=0; i< numberOfElements; i++){
-            int randomIndex = rand.nextInt(this.allColors.size());
-            Integer randomElement = this.allColors.get(randomIndex);
-            selectedNumbers.add(randomElement);
-        }
-        return selectedNumbers;
-    }
 
-}
+
+
+
 
 

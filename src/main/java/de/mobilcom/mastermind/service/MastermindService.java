@@ -13,5 +13,5 @@ public class MastermindService {
 
     public GameState guess(GameState current, int[] newGuess){
        return current;
-    }
+    } // aktueller spielstand muss angepasst werden
 }
