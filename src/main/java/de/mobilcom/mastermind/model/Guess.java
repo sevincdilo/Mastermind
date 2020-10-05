@@ -1,26 +1,23 @@
 package de.mobilcom.mastermind.model;
 
-import java.util.ArrayList;
-
 public class Guess {
 
     private int[] playerCombination;
     private int rightPositionAndColorCount;
     private int rightColorCount;
-    private int[] attemps;
 
-    public Guess(int[] playMove, int rightPositionAndColorCount, int rightColorCount) {
-        this.playerCombination = playMove; // spieler combination
+    public Guess(int[] playerCombination, int rightPositionAndColorCount, int rightColorCount) {
+        this.playerCombination = playerCombination; // spieler combination
         this.rightPositionAndColorCount = rightPositionAndColorCount;
         this.rightColorCount = rightColorCount;
     }
 
-    public int[] getPlayMove() {
+    public int[] getPlayerCombination() {
         return playerCombination;
     }
 
-    public void setPlayMove(int[] playMove) {
-        this.playerCombination = playMove;
+    public void setPlayerCombination(int[] playerCombination) {
+        this.playerCombination = playerCombination;
     }
 
     public int getRightPositionAndColorCount() {
@@ -38,11 +35,6 @@ public class Guess {
     public void setRightColorCount(int rightColorCount) {
         this.rightColorCount = rightColorCount;
     }
-
-    public int[] getAttemps() {
-        return attemps;
-    }
-
 
 }
 

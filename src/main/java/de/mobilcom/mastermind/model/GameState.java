@@ -8,16 +8,15 @@ public class GameState {  // guesses um einzelne versuche zu speichern
     private int colors;
     private int fields;
     private int trycount;
-    private Guess[] attemps;
-
+    private List<Guess> attempts;
+    Random random = new Random();
 
     public GameState(int colors, int fields, int trycount) {
         this.colors = colors;
         this.fields = fields;
         this.trycount = trycount;
-       // this.computerCombination =this.generateComputerCombination();
-      //  this.attemps = ;
-
+        this.attempts = new ArrayList<>();
+        this.computerCombination = generateComputerCombination(fields, colors);
     }
 
     public int getColors() {
@@ -44,35 +43,33 @@ public class GameState {  // guesses um einzelne versuche zu speichern
         this.trycount = trycount;
     }
 
+    public List<Guess> getAttempts() {
+        return attempts;
+    }
 
+    public int[] getComputerCombination() {
+        return computerCombination;
+    }
+    
     /**
      * Creates a random combination of size {@link #fields} where
      * each item is one of 1, ..., {@link #colors}.
-     *
-     * @return
+     * 
+     * @param fields
+     * @param colors
+     * @return an int array of size #fields.
      */
-//    public int[] generateComputerCombination() {
-//        List<Integer> selectedNumbers = new ArrayList<Integer>();
-//        Random combination = new Random();
-//        int colors;
-//
-//        for(int i=0; i< colors; i++){
-//            int randomIndex = combination.nextInt(selectedNumbers());
-//            Integer randomElement = selectedNumbers.get(randomIndex);
-//            selectedNumbers.add(randomElement);
-//        }
-//        System.out.println(selectedNumbers);
-//        return selectedNumbers;
-//
-//    }
+    private int[] generateComputerCombination(int fields, int colors) {
 
-    public int generateComputerCombination() {
-        Integer[] computerCombination = {1, 2, 3, 4, 5, 6, 7, 8};
-        List<Integer> list = Arrays.asList(computerCombination);
-        Collections.shuffle(list);
-        list.toArray(computerCombination);
-        return computerCombination[0-3];
+        int[] result = new int[fields];
+
+        for (int i=0;i<fields;i++) {
+            result[i] = random.nextInt(colors);
+        }
+
+        return result;
     }
+}
 
 
 
