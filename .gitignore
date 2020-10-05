@@ -9,3 +9,10 @@ out
 .gitattributes
 .idea
 Mastermind.iml
+
+# ignore eclipse files
+.classpath
+.project
+.settings/
+bin/
+
