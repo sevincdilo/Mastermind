@@ -51,6 +51,10 @@ public class GameState {  // guesses um einzelne versuche zu speichern
         return computerCombination;
     }
 
+    public void setComputerCombination(int[] computerCombination) {
+        this.computerCombination = computerCombination;
+    }
+    
     /**
      * Creates a random combination of size {@link #fields} where
      * each item is one of 1, ..., {@link #colors}.
