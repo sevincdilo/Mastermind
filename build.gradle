@@ -4,14 +4,39 @@
  * This is a general purpose Gradle build.
  * Learn how to create Gradle builds at https://guides.gradle.org/creating-new-gradle-builds
  */
-
+buildscript {}
 plugins {
     id 'java-library'
+
 }
-
-
 
 task compile {
 
     doLast {println 'Hello world!'    }}
 
+repositories {
+    mavenCentral()
+    maven {url 'https://artifactory.mobilcom.de/artifactory/repo' }
+    jcenter()
+}
+
+configurations {
+    JUnit.extendsFrom testImplementation
+
+}
+
+dependencies {
+    //testCompile group: 'junit', name: 'junit', version: '4.12'
+    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+    testImplementation(
+            'org.junit.jupiter:junit-jupiter-api:5.7.0' ,
+            'junit:junit:4.12'
+    )
+    testRuntimeOnly ('org.junit.jupiter:junit-jupiter-engine:5.7.0')
+}
+
+
+test {
+    useJUnitPlatform() {
+    }
+}
