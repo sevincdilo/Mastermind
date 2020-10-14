@@ -12,11 +12,12 @@ plugins {
 
 task compile {
 
-    doLast {println 'Hello world!'    }}
+    doLast { println 'Hello world!' }
+}
 
 repositories {
     mavenCentral()
-    maven {url 'https://artifactory.mobilcom.de/artifactory/repo' }
+    maven { url 'https://artifactory.mobilcom.de/artifactory/repo' }
     jcenter()
 }
 
@@ -29,10 +30,10 @@ dependencies {
     //testCompile group: 'junit', name: 'junit', version: '4.12'
     implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
     testImplementation(
-            'org.junit.jupiter:junit-jupiter-api:5.7.0' ,
+            'org.junit.jupiter:junit-jupiter-api:5.7.0',
             'junit:junit:4.12'
     )
-    testRuntimeOnly ('org.junit.jupiter:junit-jupiter-engine:5.7.0')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.7.0')
 }
 
 

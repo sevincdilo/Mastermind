@@ -7,14 +7,14 @@ public class GameState {  // guesses um einzelne versuche zu speichern
     private int[] computerCombination;
     private int colors;
     private int fields;
-    private int trycount;
+    private int tryCount;
     private List<Guess> attempts;
     Random random = new Random();
 
-    public GameState(int colors, int fields, int trycount) {
+    public GameState(int colors, int fields, int tryCount) {
         this.colors = colors;
         this.fields = fields;
-        this.trycount = trycount;
+        this.tryCount = tryCount;
         this.attempts = new ArrayList<>();
         this.computerCombination = generateComputerCombination(fields, colors);
     }
@@ -35,12 +35,12 @@ public class GameState {  // guesses um einzelne versuche zu speichern
         this.fields = fields;
     }
 
-    public int getTrycount() {
-        return trycount;
+    public int getTryCount() {
+        return tryCount;
     }
 
-    public void setTrycount(int trycount) {
-        this.trycount = trycount;
+    public void setTryCount(int tryCount) {
+        this.tryCount = tryCount;
     }
 
     public List<Guess> getAttempts() {
@@ -50,11 +50,11 @@ public class GameState {  // guesses um einzelne versuche zu speichern
     public int[] getComputerCombination() {
         return computerCombination;
     }
-    
+
     /**
      * Creates a random combination of size {@link #fields} where
      * each item is one of 1, ..., {@link #colors}.
-     * 
+     *
      * @param fields
      * @param colors
      * @return an int array of size #fields.
@@ -63,7 +63,7 @@ public class GameState {  // guesses um einzelne versuche zu speichern
 
         int[] result = new int[fields];
 
-        for (int i=0;i<fields;i++) {
+        for (int i = 0; i < fields; i++) {
             result[i] = random.nextInt(colors);
         }
 
