@@ -7,7 +7,7 @@ public class Guess {
     private int rightColorCount;
 
     public Guess(int[] playerCombination, int rightPositionAndColorCount, int rightColorCount) {
-        this.playerCombination = playerCombination; // spieler combination
+        this.playerCombination = playerCombination;
         this.rightPositionAndColorCount = rightPositionAndColorCount;
         this.rightColorCount = rightColorCount;
     }

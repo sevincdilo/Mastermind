@@ -1,10 +1,12 @@
 package de.mobilcom.mastermind.model;
 
+import de.mobilcom.mastermind.service.MastermindService;
+
 import java.util.*;
 
-public class GameState {  // guesses um einzelne versuche zu speichern
+public class GameState extends Throwable {
 
-    private int[] computerCombination;
+    public int[] computerCombination;
     private int colors;
     private int fields;
     private int tryCount;
@@ -20,10 +22,12 @@ public class GameState {  // guesses um einzelne versuche zu speichern
     }
 
     public int getColors() {
+
         return colors;
     }
 
     public void setColors(int colors) {
+
         this.colors = colors;
     }
 
@@ -47,6 +51,7 @@ public class GameState {  // guesses um einzelne versuche zu speichern
         return attempts;
     }
 
+
     public int[] getComputerCombination() {
         return computerCombination;
     }
@@ -54,7 +59,7 @@ public class GameState {  // guesses um einzelne versuche zu speichern
     public void setComputerCombination(int[] computerCombination) {
         this.computerCombination = computerCombination;
     }
-    
+
     /**
      * Creates a random combination of size {@link #fields} where
      * each item is one of 1, ..., {@link #colors}.
@@ -73,6 +78,9 @@ public class GameState {  // guesses um einzelne versuche zu speichern
 
         return result;
     }
+
+    
+
 }
 
 

@@ -24,8 +24,8 @@ class MastermindServiceTest {
     @Test
     @DisplayName("creation of a new GameState")
     void newGame() {
-    
-        /* 
+
+        /*
          * execute
          */
         GameState current = service.newGame(COLOR_COUNT, FIELD_COUNT, MAX_TRIES);
@@ -49,7 +49,6 @@ class MastermindServiceTest {
 
     @Test
     @DisplayName("valid guess on a new game")
-    @Disabled("until implementation of guess is complete")
     void guess() {
     
         /*
@@ -78,7 +77,6 @@ class MastermindServiceTest {
      */
     @Test
     @DisplayName("a new guess with a wrong number of elements is invalid")
-    @Disabled("until implementation of guess is complete")
     void guessWithInvalidNumberOfElements() {
     
         /*
@@ -98,7 +96,6 @@ class MastermindServiceTest {
      */
     @Test
     @DisplayName("a new guess with an invalid color is invalid")
-    @Disabled("until implementation of guess is complete")
     void guessWithInvalidColor() {
     
         /*
@@ -119,7 +116,7 @@ class MastermindServiceTest {
      */
     @Test
     @DisplayName("a new guess is not allowed when the game is over")
-    @Disabled("until implementation of guess is complete")
+   // @Disabled("until implementation of guess is complete")
     void guessWhenGameIsOver() {
     
         /*
@@ -128,7 +125,7 @@ class MastermindServiceTest {
          */         
         GameState current = new GameState(COLOR_COUNT, FIELD_COUNT, MAX_TRIES);
         int[] playerCombination = new int[] {0,0,0,0};
-        for (int i = 0; i < MAX_TRIES; i++) {
+        for (int i = 0; i < MAX_TRIES -1; i++) {
             current.getAttempts().add(new Guess(playerCombination, 0, 0));
         }
         int[] newGuess = new int[] {0,0,0,0};
@@ -141,7 +138,6 @@ class MastermindServiceTest {
     
     @Test
     @DisplayName("#1 example evaluation of a guess")
-    @Disabled("until implementation of guess is complete")
     void allColorsWrong() {
     
         /*
@@ -163,7 +159,6 @@ class MastermindServiceTest {
     
     @Test
     @DisplayName("#2 example evaluation of a guess")
-    @Disabled("until implementation of guess is complete")
     void allFieldsCorrect() {
     
         /*
@@ -181,6 +176,91 @@ class MastermindServiceTest {
          * verify
          */
         assertEvaluation(4, 0, nextState);
+    }
+
+    @Test
+    @DisplayName("#3 example evaluation of a guess")
+    void mirrorFieldsCase(){
+
+        /*
+         * prepare
+         */
+        GameState current = createGameState(1,1,0,0);
+        int[] newGuess = createGuess(0,0,1,1);
+
+        /*
+         * execute
+         */
+        GameState nextState = service.guess(current,newGuess);
+
+        /*
+         * verify
+         */
+        assertEvaluation(0, 4, nextState);
+    }
+
+    @Test
+    @DisplayName("#4 example evaluation of a guess")
+    void mirror2FieldsCase(){
+
+        /*
+         * prepare
+         */
+        GameState current = createGameState(0,0,1,1);
+        int[] newGuess = createGuess(1,1,0,0);
+
+        /*
+         * execute
+         */
+        GameState nextState = service.guess(current, newGuess);
+
+        /*
+         * verify
+         */
+        assertEvaluation(0,4, nextState);
+
+    }
+
+    @Test
+    @DisplayName("#5 example evaluation of a guess")
+    void mixFieldCase(){
+
+        /*
+         * prepare
+         */
+        GameState current = createGameState(1,2,2,3);
+        int[] newGuess = createGuess(0,2,3,1);
+
+        /*
+         * execute
+         */
+        GameState nextState = service.guess(current, newGuess);
+
+        /*
+         * verify
+         */
+        assertEvaluation(1,2, nextState);
+    }
+
+    @Test
+    @DisplayName("#6 example evaluation of a guess")
+    void mixedFieldsCase(){
+
+        /*
+         * prepare
+         */
+        GameState current = createGameState(4,2,0,5);
+        int[] newGuess = createGuess(1,0,3,5);
+
+        /*
+         * execute
+         */
+        GameState nextState = service.guess(current,newGuess);
+
+        /*
+         * verify
+         */
+        assertEvaluation(1,1,nextState);
     }
 
     /**
