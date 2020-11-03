@@ -3,16 +3,46 @@ package de.mobilcom.mastermind.service;
 import de.mobilcom.mastermind.model.GameState;
 import de.mobilcom.mastermind.model.Guess;
 
-
-
+/**
+ * Creates new games and is able to calculate new game states from
+ * given game states by evaluating new guesses.
+ */
 public class MastermindService {
 
+    /**
+     * Creates a new game state with the given game parameters.
+     *
+     * @param colorCount the number of colors to be chosen for each field.
+     *                   The colors will have values &gt;=0
+     *                   and &lt; colorCount
+     * @param fieldCount the number of fields to be guessed
+     * @param maxTries the maxmimum number of tries/attempts.
+     * @return a new game state with the given parameters and an empty list of attempts
+     */
     public GameState newGame(int colorCount, int fieldCount, int maxTries) {
         GameState state = new GameState(colorCount, fieldCount, maxTries);
         return state;
 
     }
 
+    /**
+     * Calculates a new game state based on the given game state and a new guess.<p/>
+     *
+     * If the newGuess has an invalid length or contains invalid color values
+     * an IllegalArgumentException will be thrown.<br/>
+     * If the given game state already has a list of attempts with the
+     * size of the maximum tries an IllegalArgumentException will be thrown
+     * (game is already over, no more guesses allowed).<p/>
+     *
+     * Afterwards the returned game state will be a "copy" of the given
+     * game state with one more attempt. The last attempt will
+     * be the new evaluated guess.
+     * 
+     * @param current
+     * @param newGuess
+     * @return
+     * @throws IllegalArgumentException
+     */
     public GameState guess(GameState current, int[] newGuess) throws IllegalArgumentException {
 
 
