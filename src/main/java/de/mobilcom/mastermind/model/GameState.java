@@ -4,7 +4,7 @@ import de.mobilcom.mastermind.service.MastermindService;
 
 import java.util.*;
 
-public class GameState  {
+public class GameState {
 
     private int[] computerCombination;
     private int colors;
@@ -79,7 +79,6 @@ public class GameState  {
         return result;
     }
 
-    
 
 }
 

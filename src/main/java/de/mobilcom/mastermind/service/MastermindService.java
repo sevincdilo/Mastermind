@@ -44,17 +44,7 @@ public class MastermindService {
      * @throws IllegalArgumentException
      */
 
-//    Berechnet einen neuen Spielstatus basierend auf dem angegebenen Spielstatus und einer neuen Vermutung. <P />
-//            * *
-//            * Wenn der newGuess eine ungültige Länge hat oder ungültige Farbwerte enthält
-//     * Eine IllegalArgumentException wird ausgelöst. <br/>
-//            * Wenn der angegebene Spielstatus bereits eine Liste von Versuchen mit dem hat
-//     * Größe der maximalen Versuche Eine IllegalArgumentException wird ausgelöst
-//     * (Spiel ist bereits vorbei, keine Vermutungen mehr erlaubt). <p />
-//            * *
-//            * Danach ist der zurückgegebene Spielstatus eine "Kopie" des angegebenen
-//     * Spielstatus mit einem weiteren Versuch. Der letzte Versuch wird
-//     * sei die neu bewertete Vermutung.
+
     public GameState guess(GameState current, int[] newGuess) throws IllegalArgumentException {
 
 
@@ -72,7 +62,6 @@ public class MastermindService {
                 throw new IllegalArgumentException("invalid color at index " + i + " : " + item);
             }
         }
-        // max tries check
 
         if (current.getAttempts().size() >= current.getTryCount()) {
             throw new IllegalStateException("game already finished");
@@ -110,7 +99,7 @@ public class MastermindService {
 
 }
 
-        // TODO werte berechnen
+// TODO werte berechnen
 
 
 
