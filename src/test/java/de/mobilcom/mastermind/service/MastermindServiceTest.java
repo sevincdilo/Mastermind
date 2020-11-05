@@ -125,7 +125,7 @@ class MastermindServiceTest {
          */         
         GameState current = new GameState(COLOR_COUNT, FIELD_COUNT, MAX_TRIES);
         int[] playerCombination = new int[] {0,0,0,0};
-        for (int i = 0; i < MAX_TRIES -1; i++) {
+        for (int i = 0; i < MAX_TRIES; i++) {
             current.getAttempts().add(new Guess(playerCombination, 0, 0));
         }
         int[] newGuess = new int[] {0,0,0,0};

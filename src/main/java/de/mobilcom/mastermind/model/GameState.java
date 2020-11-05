@@ -4,9 +4,9 @@ import de.mobilcom.mastermind.service.MastermindService;
 
 import java.util.*;
 
-public class GameState extends Throwable {
+public class GameState  {
 
-    public int[] computerCombination;
+    private int[] computerCombination;
     private int colors;
     private int fields;
     private int tryCount;
