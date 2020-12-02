@@ -1,0 +1,7 @@
+.gameplace {background-color: indianred; height: 400px; width: 250px; padding: 10px}
+.dot {background-color: darkorange; height: 14px; width: 14px; border-radius: 7px}
+.dot2{background-color: indigo;margin-left: 28px; height:14px; width:14px; border-radius: 7px}
+.dot3{background-color: maroon;margin-left: 28px; height: 14px; width:14px; border-radius: 7px}
+.dot4{background-color: skyblue; margin-left: 28px; height: 14px; width:14px; border-radius: 7px}
+.dot21{background-color: black; margin-top:28px; height: 14px; width: 14px; border-radius: 7px}
+.dot22{background-color: indigo; margin-top: 28px; margin-left: 28px; height: 14px; width:14px; border-radius: 7px}

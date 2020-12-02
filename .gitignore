@@ -8,7 +8,7 @@ out
 
 .gitattributes
 .idea
-Mastermind.iml
+de.mobilcom.mastermind.Mastermind.iml
 
 # ignore eclipse files
 .classpath
