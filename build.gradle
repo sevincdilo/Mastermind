@@ -15,7 +15,7 @@ plugins {
     application {
      //  applicationDefaultJvmArgs = [ '-Dgreeting.language=en']
 
-        mainClass = 'de.mobilcom.mastermind.Mastermind'
+        mainClass = 'de.mobilcom.mastermind.frontend.Terminal'
     }
 
 

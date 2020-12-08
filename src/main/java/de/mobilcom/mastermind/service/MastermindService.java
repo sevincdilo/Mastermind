@@ -19,6 +19,7 @@ public class MastermindService {
      * @param maxTries   the maxmimum number of tries/attempts.
      * @return a new game state with the given parameters and an empty list of attempts
      */
+
     public GameState newGame(int colorCount, int fieldCount, int maxTries) {
         GameState state = new GameState(colorCount, fieldCount, maxTries);
         return state;
